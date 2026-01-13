@@ -1,0 +1,24 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "cc-plugins",
+  "version": "1.0.0",
+  "description": "Claude Code plugins by Raj Shekhar",
+  "owner": {
+    "name": "Raj Shekhar",
+    "url": "https://github.com/rsh3khar"
+  },
+  "plugins": [
+    {
+      "name": "rsh",
+      "description": "Analyze your Claude Code conversation history and generate personalized INSIGHT.md and LEARN.md files. Uses parallel agents to understand your communication style, code preferences, frustrations, and patterns.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Raj Shekhar",
+        "url": "https://github.com/rsh3khar"
+      },
+      "source": "./plugins/rsh",
+      "category": "productivity",
+      "tags": ["learning", "personalization", "claude-md", "preferences"]
+    }
+  ]
+}

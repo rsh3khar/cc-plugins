@@ -1,0 +1,11 @@
+{
+  "name": "rsh",
+  "version": "1.0.0",
+  "description": "Learn from your Claude Code history - generates personalized INSIGHT.md and LEARN.md",
+  "author": {
+    "name": "Raj Shekhar",
+    "url": "https://github.com/rsh3khar"
+  },
+  "repository": "https://github.com/rsh3khar/cc-plugins",
+  "keywords": ["learning", "preferences", "claude-md", "personalization"]
+}
