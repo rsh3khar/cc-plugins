@@ -2,6 +2,8 @@
 
 Analyze my Claude Code conversations and generate personalized insights.
 
+**Core goal:** Improve CLAUDE.md significantly. Learn the user's preferences - how they communicate, how they code, what they hate, what they expect - so every future Claude session works better.
+
 ## Step 0: Check dependencies
 
 Check if `jq` is installed (`which jq`). If not, offer to install it:
@@ -98,6 +100,8 @@ Check cleaned file size: `wc -l /tmp/cclearn_clean.md`
 
 Launch 4 agents IN PARALLEL (single message, multiple Task tool calls), each analyzing `/tmp/cclearn_clean.md`.
 
+**IMPORTANT: Use `model: "opus"` for all agents.** Quality matters more than speed here.
+
 **Reading strategy for agents:**
 - Start with a big initial sample (first 5000 lines) to understand the user
 - Then read the rest in 2000-3000 line chunks using offset/limit parameters
@@ -121,12 +125,15 @@ Read the whole cleaned file safely (chunks with offset/limit). Analyze what the 
 Combine agent findings into `INSIGHT.md` in current directory:
 
 - Who they are (role, projects, tech)
-- Communication style
+- Communication style (include "Feedback Asymmetry" if applicable)
 - Code preferences
 - What frustrates them
 - Patterns & habits
+- **Honest Observations** - A section that CRITIQUES the user's own patterns. Don't just describe - call out blind spots.
 
-**Tone:** Brutally honest. Don't flatter. Call out inconsistencies. Use quotes as evidence. Mirror, not pep talk.
+**Tone:** Brutally honest. Don't flatter. Call out inconsistencies. Mirror, not pep talk.
+
+**Quotes:** Preserve exact language. Don't sanitize or tone down.
 
 ## Step 5: Generate LEARN.md
 
@@ -137,10 +144,11 @@ Include:
 - Coding: their preferences, patterns, conventions
 - Do: specific behaviors they appreciate
 - Don't: specific things that frustrate them (be detailed, these are critical)
-- When frustrated: how to recognize and respond
+- When frustrated: how to recognize and respond (include escalation levels if patterns exist)
+- **Quick Reference table** at the end - mapping common phrases to meanings/actions
 
 **Do NOT include:**
-- Project-specific context (projects change)
+- Project-specific context, paths, or tech stack (projects change)
 - Generic advice that applies to everyone
 
 **Tone:** Practical, direct. Just instructions. No fluff.
